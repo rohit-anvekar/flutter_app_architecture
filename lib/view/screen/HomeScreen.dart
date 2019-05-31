@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_app_architecture/view/list/ChatList.dart';
+import 'package:flutter_app_architecture/view/list/statusList.dart';
 import 'package:flutter_app_architecture/viewmodel/MainViewModel.dart';
 import 'package:scoped_model/scoped_model.dart';
-import 'package:flutter_app_architecture/remote/service/ApiService.dart';
+import 'package:flutter_app_architecture/data/remote/service/ApiService.dart';
 
 class HomeScreen extends StatefulWidget {
   final MainViewModel mainViewModel = MainViewModel(apiInterface: ApiService());
@@ -63,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen>
           model: widget.mainViewModel,
           child: TabBarView(
               controller: tabController,
-              children: <Widget>[ChatList(), ChatList(), ChatList()]),
+              children: <Widget>[ChatList(), StatusList(), ChatList()]),
         ),
       ),
       debugShowCheckedModeBanner: false,

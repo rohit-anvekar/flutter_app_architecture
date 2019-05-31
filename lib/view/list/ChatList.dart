@@ -3,6 +3,8 @@ import 'package:flutter_app_architecture/view/list/ChatItems.dart';
 import 'package:flutter_app_architecture/model/Chats.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:flutter_app_architecture/viewmodel/MainViewModel.dart';
+import 'package:flutter_app_architecture/data/local/db/table/ChatTable.dart';
+import 'package:flutter_app_architecture/data/local/db/DatabaseHelper.dart';
 
 class ChatList extends StatefulWidget {
   @override
@@ -28,6 +30,10 @@ class _ChatListState extends State<ChatList> {
                 {
                   if (snapShot.hasData) {
                     var chats = snapShot.data;
+
+                    //Save to database
+                    DatabaseHelper.instance.saveChats(chats);
+
                     return ListView.builder(
                         itemCount: chats.length,
                         itemBuilder: (_, int index) {
@@ -46,24 +52,6 @@ class _ChatListState extends State<ChatList> {
       },
     );
   }
+
 }
 
-/*
-class _ChatListState extends State<ChatList> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: ListView.builder(itemCount: 10,
-            itemBuilder: (BuildContext context,int index) {
-          var chats = Chats();
-          print("chats>>>> $chats");
-          return ChatItems(chats);
-        }),
-      ),
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
-
- */

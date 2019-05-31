@@ -1,7 +1,7 @@
 import 'package:scoped_model/scoped_model.dart';
 import 'package:meta/meta.dart';
 import 'package:flutter_app_architecture/model/Chats.dart';
-import 'package:flutter_app_architecture/remote/ApiInterface.dart';
+import 'package:flutter_app_architecture/data/remote/ApiInterface.dart';
 
 class MainViewModel extends Model {
   final ApiInterface apiInterface;

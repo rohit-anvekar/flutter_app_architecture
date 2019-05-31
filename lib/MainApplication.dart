@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'viewmodel/MainViewModel.dart';
 import 'view/screen/SplashScreen.dart';
 import 'view/screen/HomeScreen.dart';
-import 'remote/service/ApiService.dart';
+import 'data/remote/service/ApiService.dart';
 
 void main() => runApp(MainApplication());
 

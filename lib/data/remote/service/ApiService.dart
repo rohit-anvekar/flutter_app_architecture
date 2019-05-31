@@ -1,4 +1,4 @@
-import 'package:flutter_app_architecture/remote/ApiInterface.dart';
+import 'package:flutter_app_architecture/data/remote/ApiInterface.dart';
 import 'package:flutter_app_architecture/model/Chats.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
