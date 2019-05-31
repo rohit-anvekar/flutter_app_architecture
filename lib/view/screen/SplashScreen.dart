@@ -8,7 +8,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   startTime() async {
     var _duration = new Duration(seconds: 3);
     return new Timer(_duration, navigationPage);
@@ -16,22 +15,22 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: Colors.green,
       body: Center(
-        child: Icon(FontAwesomeIcons.facebookMessenger,size: 80,color: Colors.white),
+        child: Icon(FontAwesomeIcons.facebookMessenger,
+            size: 80, color: Colors.white),
       ),
     );
   }
 
-
   void navigationPage() {
-     Navigator.of(context).pushReplacementNamed('/HomeScreen');
+    Navigator.of(context).pushReplacementNamed('/HomeScreen');
   }
 
   @override
   void initState() {
-      super.initState();
-      startTime();
+    super.initState();
+    startTime();
   }
 }

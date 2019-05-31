@@ -17,5 +17,4 @@ class Chats {
     producer = map['producer'];
     releaseDate = DateTime.parse(map['release_date']);
   }
-
 }

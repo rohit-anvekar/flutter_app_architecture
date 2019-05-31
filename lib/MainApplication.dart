@@ -4,28 +4,17 @@ import 'view/screen/SplashScreen.dart';
 import 'view/screen/HomeScreen.dart';
 import 'remote/service/ApiService.dart';
 
+void main() => runApp(MainApplication());
 
-final MainViewModel mainPageVM = MainViewModel(apiInterface: ApiService());
-
-
-void main() => runApp(MainApplication(mainViewModel: mainPageVM));
-
-class MainApplication  extends StatelessWidget {
-
-  final MainViewModel mainViewModel;
-
-  MainApplication({@required this.mainViewModel});
-
+class MainApplication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter App',
-      home: SplashScreen(),
-      routes: <String, WidgetBuilder>{
-        '/HomeScreen' : (BuildContext content) => HomeScreen(mainViewModel: mainViewModel)
-      }
-      ,debugShowCheckedModeBanner: false
-    );
+        title: 'Flutter App',
+        home: SplashScreen(),
+        routes: <String, WidgetBuilder>{
+          '/HomeScreen': (BuildContext content) => HomeScreen()
+        },
+        debugShowCheckedModeBanner: false);
   }
 }
-
